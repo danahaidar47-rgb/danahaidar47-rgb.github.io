@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dana Haidar | APPLHSCI 9099 Capstone ePortfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f3ee;
+    --warm-white: #fdfaf7;
+    --teal: #2a6b6b;
+    --teal-light: #3d8a8a;
+    --teal-pale: #e6f2f2;
+    --charcoal: #1c2828;
+    --mid: #4a5c5c;
+    --soft: #8a9c9c;
+    --border: #d4e2e2;
+    --gold: #b8944e;
+    --gold-pale: #f5eed8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(253,250,247,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    height: 62px;
+    display: flex; align-items: center;
+    padding: 0 52px;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--teal); letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--mid);
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.09em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 62px;
+  }
+  .hero-text {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 60px 80px 80px;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 22px;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 5.5vw, 5rem);
+    font-weight: 300; line-height: 1.06;
+    color: var(--charcoal); margin-bottom: 18px;
+  }
+  .hero-name em { font-style: italic; color: var(--teal); }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 300;
+    color: var(--mid); font-style: italic;
+    margin-bottom: 28px; line-height: 1.5;
+    max-width: 460px;
+  }
+  .hero-desc {
+    font-size: 0.92rem; color: var(--mid);
+    max-width: 420px; line-height: 1.85;
+    margin-bottom: 40px;
+  }
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal); color: white;
+    text-decoration: none; padding: 13px 26px;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--charcoal); transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1.5px solid var(--teal); color: var(--teal);
+    text-decoration: none; padding: 12px 26px;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--teal); color: white; }
+
+  .hero-visual {
+    background: var(--teal-pale);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-visual::before {
+    content: '';
+    position: absolute; width: 440px; height: 440px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+    opacity: 0.1; top: -100px; right: -100px;
+  }
+  .hero-visual::after {
+    content: '';
+    position: absolute; width: 220px; height: 220px;
+    border-radius: 50%; background: var(--gold);
+    opacity: 0.08; bottom: 60px; left: 40px;
+  }
+  .hero-card {
+    z-index: 1; background: white;
+    padding: 44px 40px; max-width: 320px;
+    border-top: 3px solid var(--teal);
+    box-shadow: 0 8px 40px rgba(42,107,107,0.1);
+  }
+  .hero-card-label {
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 20px;
+  }
+  .hero-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--charcoal); margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .hero-card-meta { display: flex; flex-direction: column; gap: 10px; }
+  .meta-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.82rem; color: var(--mid); line-height: 1.5;
+  }
+  .meta-icon { color: var(--teal); flex-shrink: 0; margin-top: 2px; }
+  .conf-badge {
+    margin-top: 22px; background: var(--gold-pale);
+    border: 1px solid var(--gold); padding: 12px 16px;
+  }
+  .conf-badge p {
+    font-size: 0.75rem; color: var(--gold);
+    font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .conf-badge span { font-size: 0.82rem; color: var(--charcoal); font-weight: 400; display: block; margin-top: 3px; }
+
+  /* ── SECTIONS BASE ── */
+  section { padding: 96px 80px; }
+  .section-eyebrow {
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-eyebrow::after {
+    content: ''; display: block;
+    width: 36px; height: 1px; background: var(--teal);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    font-weight: 300; line-height: 1.15;
+    color: var(--charcoal); margin-bottom: 18px;
+  }
+  .section-title em { font-style: italic; color: var(--teal); }
+  .section-lead {
+    font-size: 0.93rem; color: var(--mid);
+    line-height: 1.85; max-width: 640px; margin-bottom: 52px;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--cream); }
+  .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start; }
+  .about-body { font-size: 0.93rem; color: var(--mid); line-height: 1.85; margin-bottom: 18px; }
+  .about-cards { display: flex; flex-direction: column; gap: 20px; }
+  .about-card {
+    background: white; padding: 26px 30px;
+    border-left: 3px solid var(--teal);
+  }
+  .about-card .card-year {
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 6px;
+  }
+  .about-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 600;
+    color: var(--charcoal); margin-bottom: 6px;
+  }
+  .about-card p { font-size: 0.84rem; color: var(--mid); line-height: 1.65; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .tag {
+    background: white; border: 1px solid var(--border);
+    padding: 5px 14px; font-size: 0.76rem;
+    color: var(--teal); font-weight: 500;
+  }
+
+  /* ── COMPETENCIES ── */
+  #competencies { background: var(--charcoal); }
+  #competencies .section-eyebrow { color: var(--teal-light); }
+  #competencies .section-eyebrow::after { background: var(--teal-light); }
+  #competencies .section-title { color: white; }
+  #competencies .section-title em { color: var(--teal-light); }
+  #competencies .section-lead { color: rgba(255,255,255,0.6); }
+  .comp-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: rgba(255,255,255,0.06); }
+  .comp-card {
+    background: var(--charcoal);
+    padding: 36px 32px; transition: background 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .comp-card::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px; background: var(--teal-light);
+    transform: scaleX(0); transition: transform 0.3s;
+    transform-origin: left;
+  }
+  .comp-card:hover { background: rgba(255,255,255,0.04); }
+  .comp-card:hover::after { transform: scaleX(1); }
+  .comp-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 300;
+    color: rgba(255,255,255,0.08); line-height: 1;
+    margin-bottom: 14px;
+  }
+  .comp-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: white; margin-bottom: 10px;
+  }
+  .comp-card p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+  .comp-evidence {
+    margin-top: 12px; font-size: 0.75rem;
+    color: var(--teal-light); font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── PROJECT DESCRIPTION ── */
+  #project { background: var(--warm-white); }
+  .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .project-body { font-size: 0.93rem; color: var(--mid); line-height: 1.85; margin-bottom: 18px; }
+  .framework-box {
+    background: var(--teal-pale); border: 1px solid var(--border);
+    padding: 28px 32px; margin-top: 28px;
+  }
+  .framework-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 600;
+    color: var(--teal); margin-bottom: 10px;
+  }
+  .framework-box p { font-size: 0.84rem; color: var(--mid); line-height: 1.7; font-style: italic; }
+  .detail-list { display: flex; flex-direction: column; gap: 16px; }
+  .detail-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 20px 24px; background: var(--cream);
+    border-left: 2px solid var(--teal);
+  }
+  .detail-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+  .detail-item h5 {
+    font-size: 0.84rem; font-weight: 500;
+    color: var(--charcoal); margin-bottom: 4px;
+  }
+  .detail-item p { font-size: 0.81rem; color: var(--mid); line-height: 1.6; }
+
+  /* ── SCOPING REVIEW ── */
+  #scoping { background: var(--cream); }
+  .scoping-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: start; }
+  .scoping-body { font-size: 0.93rem; color: var(--mid); line-height: 1.85; margin-bottom: 18px; }
+  .scoping-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); margin-top: 32px; }
+  .stat-cell {
+    background: white; padding: 24px 22px;
+    transition: background 0.2s;
+  }
+  .stat-cell:hover { background: var(--teal-pale); }
+  .stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400;
+    color: var(--teal); line-height: 1; margin-bottom: 6px;
+  }
+  .stat-desc { font-size: 0.76rem; color: var(--soft); }
+  .upload-box {
+    border: 2px dashed var(--border);
+    padding: 36px 28px; text-align: center;
+    background: white; transition: all 0.2s; cursor: pointer;
+  }
+  .upload-box:hover { border-color: var(--teal); background: var(--teal-pale); }
+  .upload-box .upload-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+  .upload-box p { font-size: 0.84rem; color: var(--soft); line-height: 1.6; }
+  .upload-box span { color: var(--teal); font-weight: 500; }
+  .upload-label {
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 16px; display: block;
+  }
+
+  /* ── TOOLKIT ── */
+  #toolkit { background: var(--warm-white); }
+  .toolkit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); }
+  .toolkit-card {
+    background: white; padding: 40px 38px 36px;
+    position: relative; overflow: hidden;
+    transition: background 0.25s;
+  }
+  .toolkit-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 0; height: 3px;
+    background: var(--teal); transition: width 0.3s;
+  }
+  .toolkit-card:hover::before { width: 100%; }
+  .toolkit-card:hover { background: var(--teal-pale); }
+  .tk-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem; font-weight: 300;
+    color: var(--border); line-height: 1; margin-bottom: 14px;
+    transition: color 0.25s;
+  }
+  .toolkit-card:hover .tk-num { color: rgba(42,107,107,0.2); }
+  .tk-icon { font-size: 1.6rem; display: block; margin-bottom: 12px; }
+  .toolkit-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.22rem; font-weight: 600;
+    color: var(--charcoal); margin-bottom: 10px;
+  }
+  .toolkit-card p { font-size: 0.84rem; color: var(--mid); line-height: 1.75; margin-bottom: 16px; }
+  .tk-competency {
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.08em; color: var(--teal);
+    text-transform: uppercase;
+  }
+  .toolkit-upload {
+    border: 1.5px dashed var(--border); padding: 16px 18px;
+    margin-top: 16px; font-size: 0.78rem; color: var(--soft);
+    text-align: center; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .toolkit-upload:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* -- DOWNLOAD LINKS (scoping review + reflection) -- */
+  .file-link {
+    display: flex; align-items: center; gap: 16px;
+    border: 1px solid var(--border); background: var(--warm-white);
+    padding: 18px 20px; text-decoration: none;
+    transition: all 0.2s; margin-top: 4px;
+  }
+  .file-link:hover { border-color: var(--teal); background: var(--teal-pale); }
+  .file-link-cream { background: var(--warm-white); margin-top: 18px; }
+  .file-link-icon {
+    flex-shrink: 0; font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.06em; color: white; background: var(--teal);
+    padding: 8px 10px; border-radius: 3px;
+  }
+  .file-link-text { font-size: 0.84rem; color: var(--mid); line-height: 1.6; }
+  .file-link-text strong { display: block; color: var(--charcoal); font-size: 0.92rem; margin-bottom: 3px; }
+  .file-link-arrow { margin-left: auto; color: var(--teal); font-size: 1.2rem; font-weight: 700; }
+
+  /* -- TOOLKIT: FORMAT AND ACCESS BOX -- */
+  .tk-access {
+    border: 1px solid var(--border); border-left: 3px solid var(--teal);
+    background: var(--teal-pale); padding: 14px 16px; margin-top: 16px;
+  }
+  .tk-access-label {
+    display: block; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 8px;
+  }
+  .tk-access p { font-size: 0.78rem; color: var(--mid); line-height: 1.55; margin: 0 0 5px 0; }
+  .tk-access p:last-child { margin-bottom: 0; }
+  .tk-access strong { color: var(--charcoal); font-weight: 600; }
+
+  /* -- TOOLKIT DOWNLOAD BUTTONS -- */
+  .tk-downloads { display: flex; gap: 8px; margin-top: 14px; }
+  .tk-dl {
+    flex: 1; text-align: center; padding: 11px 14px;
+    background: var(--teal); color: white;
+    font-size: 0.74rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none; transition: background 0.2s;
+  }
+  .tk-dl:hover { background: var(--charcoal); }
+  .tk-dl-alt {
+    flex: 0 0 auto; background: transparent; color: var(--teal);
+    border: 1px solid var(--teal);
+  }
+  .tk-dl-alt:hover { background: var(--teal-pale); color: var(--teal); }
+
+  /* -- ACTIVITY LOG DOWNLOAD GROUP -- */
+  .log-downloads { margin-top: 40px; }
+  .log-dl-label {
+    display: block; font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--teal-light); margin-bottom: 16px;
+  }
+  .log-dl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .log-dl-card {
+    display: block; padding: 18px 20px; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.04); transition: all 0.2s;
+  }
+  .log-dl-card:hover { border-color: var(--teal-light); background: rgba(61,138,138,0.12); }
+  .log-dl-type {
+    display: inline-block; font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.06em; color: var(--charcoal); background: var(--teal-light);
+    padding: 3px 7px; border-radius: 3px; margin-bottom: 10px;
+  }
+  .log-dl-name { display: block; font-size: 0.92rem; color: #fff; font-weight: 500; margin-bottom: 3px; }
+  .log-dl-sub { display: block; font-size: 0.76rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+  @media (max-width: 720px) { .log-dl-grid { grid-template-columns: 1fr; } }
+
+  /* ── REFLECTION ── */
+  #reflection { background: var(--cream); }
+  .reflection-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: start; }
+  .reflection-sticky { position: sticky; top: 82px; }
+  .reflection-side-body { font-size: 0.9rem; color: var(--mid); line-height: 1.8; margin-bottom: 18px; }
+  .deal-box {
+    background: white; border: 1px solid var(--border);
+    padding: 26px 28px; margin-top: 24px;
+  }
+  .deal-box h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--teal); margin-bottom: 14px;
+  }
+  .deal-step {
+    display: flex; gap: 12px; margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .deal-letter {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--teal); color: white;
+    font-size: 0.68rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .deal-step p { font-size: 0.8rem; color: var(--mid); line-height: 1.5; }
+  .reflection-blocks { display: flex; flex-direction: column; gap: 24px; }
+  .ref-block {
+    background: white; padding: 32px 36px;
+    border-bottom: 2px solid var(--teal-pale);
+  }
+  .ref-block h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.12rem; font-weight: 600;
+    color: var(--teal); margin-bottom: 12px;
+  }
+  .ref-block p { font-size: 0.88rem; color: var(--mid); line-height: 1.82; }
+  .ref-placeholder {
+    background: white; border: 2px dashed var(--border);
+    padding: 44px 36px; text-align: center;
+  }
+  .ref-placeholder p { font-size: 0.86rem; color: var(--soft); line-height: 1.6; }
+  .ref-placeholder span { color: var(--teal); font-weight: 500; }
+
+  /* ── ACTIVITY LOG ── */
+  #log { background: var(--charcoal); }
+  #log .section-eyebrow { color: var(--teal-light); }
+  #log .section-eyebrow::after { background: var(--teal-light); }
+  #log .section-title { color: white; }
+  #log .section-title em { color: var(--teal-light); }
+  #log .section-lead { color: rgba(255,255,255,0.55); max-width: 540px; }
+  .log-timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .log-timeline::before {
+    content: ''; position: absolute;
+    left: 120px; top: 0; bottom: 0;
+    width: 1px; background: rgba(255,255,255,0.1);
+  }
+  .log-entry { display: grid; grid-template-columns: 120px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .log-entry:last-child { border-bottom: none; }
+  .log-month {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal-light); padding-top: 4px;
+    text-align: right; padding-right: 20px;
+  }
+  .log-content h4 {
+    font-size: 0.9rem; font-weight: 500;
+    color: white; margin-bottom: 6px;
+  }
+  .log-content p { font-size: 0.81rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .log-competency-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .log-tag {
+    font-size: 0.67rem; padding: 3px 10px;
+    border: 1px solid rgba(61,138,138,0.4);
+    color: var(--teal-light); font-weight: 500;
+  }
+  .log-upload-row {
+    margin-top: 36px; border: 1.5px dashed rgba(255,255,255,0.15);
+    padding: 28px 32px; text-align: center;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .log-upload-row:hover { border-color: var(--teal-light); background: rgba(61,138,138,0.05); }
+  .log-upload-row p { font-size: 0.84rem; color: rgba(255,255,255,0.35); }
+  .log-upload-row span { color: var(--teal-light); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111c1c; padding: 56px 80px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px; align-items: start;
+  }
+  .footer-col h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 600;
+    color: white; margin-bottom: 14px;
+  }
+  .footer-col p, .footer-col a {
+    font-size: 0.8rem; color: rgba(255,255,255,0.35);
+    line-height: 1.8; text-decoration: none; display: block;
+  }
+  .footer-col a:hover { color: var(--teal-light); }
+  .footer-bottom {
+    background: #0d1515; padding: 18px 80px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-text > * { animation: fadeUp 0.65s ease both; }
+  .hero-eyebrow  { animation-delay: 0.1s; }
+  .hero-name     { animation-delay: 0.2s; }
+  .hero-subtitle { animation-delay: 0.3s; }
+  .hero-desc     { animation-delay: 0.38s; }
+  .hero-buttons  { animation-delay: 0.46s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    nav { padding: 0 24px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 0.7rem; }
+    section { padding: 64px 28px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 56px 28px; }
+    .hero-visual { display: none; }
+    .about-grid, .project-grid, .scoping-layout, .reflection-grid { grid-template-columns: 1fr; gap: 36px; }
+    .comp-grid { grid-template-columns: repeat(3, 1fr); }
+    .toolkit-grid { grid-template-columns: 1fr; }
+    .log-timeline::before { display: none; }
+    .log-entry { grid-template-columns: 1fr; gap: 6px; }
+    .log-month { text-align: left; padding-right: 0; }
+    footer { grid-template-columns: 1fr; gap: 28px; padding: 40px 28px; }
+    .footer-bottom { padding: 14px 28px; flex-direction: column; gap: 6px; }
+    .reflection-sticky { position: static; }
+  }
+  @media (max-width: 600px) {
+    .comp-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dana Haidar - Capstone ePortfolio</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#competencies">Competencies</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#scoping">Scoping Review</a></li>
+    <li><a href="#toolkit">Toolkit</a></li>
+    <li><a href="#reflection">Reflection</a></li>
+    <li><a href="#log">Activity Log</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">APPLHSCI 9099 · Western University · 2025-2026</p>
+    <h1 class="hero-name">Dana<br><em>Haidar</em></h1>
+    <p class="hero-subtitle">Knowledge Mobilization Gaps in the Communication of Ovarian Cancer Detection Without Population Screening</p>
+    <p class="hero-desc">A capstone ePortfolio documenting my research, knowledge mobilization work, and professional growth at The Hospital for Sick Children (SickKids), Toronto - under the supervision of Dr. Melanie Barwick, Senior Scientist.</p>
+    <div class="hero-buttons">
+      <a href="#project" class="btn-primary">View Project →</a>
+      <a href="#toolkit" class="btn-outline">See Toolkit</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <p class="hero-card-label">Capstone Details</p>
+      <h3>MHSc Advanced Health Care Practice</h3>
+      <div class="hero-card-meta">
+        <div class="meta-row">
+          <span class="meta-icon">🏥</span>
+          <span>Hospital for Sick Children (SickKids), Toronto</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-icon">👩‍🔬</span>
+          <span>Field Mentor: Dr. Melanie Barwick, Senior Scientist</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-icon">🎓</span>
+          <span>Academic Lead: Dr. Marcy Saxe-Braithwaite</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-icon">🏛️</span>
+          <span>Western University · APPLHSCI 9099</span>
+        </div>
+      </div>
+      <div class="conf-badge">
+        <p>🗓 Capstone Conference</p>
+        <span>June 17, 2026 - Final Presentation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-eyebrow">About Me</p>
+  <div class="about-grid">
+    <div>
+      <h2 class="section-title">Committed to <em>bridging</em> the gap between research and patient care</h2>
+      <p class="about-body">I hold a Bachelor of Science in Health Sciences from the University of Waterloo (2024), where I built a strong foundation in evidence-based practice, population health, and health communication. I am currently completing my MHSc Capstone at The Hospital for Sick Children (SickKids) in Toronto.</p>
+      <p class="about-body">My capstone focuses on a critical and underexplored problem: the knowledge mobilization gaps in how ovarian cancer detection is communicated to patients and providers in the absence of a population-level screening program. In the course of this work, I conducted a full scoping review, developed a six-component knowledge mobilization toolkit, and engaged directly with stakeholders including Ovarian Cancer Canada program leads.</p>
+      <p class="about-body">This portfolio documents my deliverables, reflections, and evidence of competency growth across all five APPLHSCI 9099 capstone competencies.</p>
+      <div class="tag-row">
+        <span class="tag">Knowledge Mobilization</span>
+        <span class="tag">Health Communication</span>
+        <span class="tag">Scoping Reviews</span>
+        <span class="tag">Ovarian Cancer</span>
+        <span class="tag">Evidence-Based Practice</span>
+        <span class="tag">Women's Health</span>
+      </div>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <div class="card-year">2024</div>
+        <h4>BSc Health Sciences</h4>
+        <p>University of Waterloo - graduated with a foundation in population health, evidence-based practice, and health communication.</p>
+      </div>
+      <div class="about-card">
+        <div class="card-year">2025 - 2026</div>
+        <h4>MHSc Advanced Health Care Practice</h4>
+        <p>Western University - Capstone Experience (APPLHSCI 9099).</p>
+      </div>
+      <div class="about-card">
+        <div class="card-year">Field Placement</div>
+        <h4>SickKids, Toronto</h4>
+        <p>The Hospital for Sick Children - completing my capstone under the mentorship of Dr. Melanie Barwick.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCIES -->
+<section id="competencies">
+  <p class="section-eyebrow">AHS Competency Framework</p>
+  <h2 class="section-title">Five Core <em>Competencies</em></h2>
+  <p class="section-lead">Evidence of proficiency across all five APPLHSCI 9099 Applied Health Sciences competencies, demonstrated through deliverables, reflections, and capstone activities.</p>
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-num">01</div>
+      <h3>Interprofessional Collaboration</h3>
+      <p>Working collaboratively with clinicians, researchers, and advocacy organizations - including Dr. Barwick's lab team and Ovarian Cancer Canada - to co-develop patient-facing resources.</p>
+      <p class="comp-evidence">Evidence → Activity Log · Mentor Sessions · Stakeholder Meetings</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-num">02</div>
+      <h3>Self-Awareness & Reflexivity</h3>
+      <p>Critical reflection on communication style, biases in translating medical knowledge for diverse populations, and personal growth throughout the capstone using the D.E.A.L. model.</p>
+      <p class="comp-evidence">Evidence → Reflection Paper · Activity Log · EI Assessment</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-num">03</div>
+      <h3>Critical Reasoning & Creative Problem-Solving</h3>
+      <p>Identifying knowledge mobilization gaps in ovarian cancer detection communication and designing targeted toolkit solutions to address them across patient and provider audiences.</p>
+      <p class="comp-evidence">Evidence → Scoping Review · Toolkit · Milestone Map</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-num">04</div>
+      <h3>Evidence-Based Leadership</h3>
+      <p>Applying best available evidence through a formal scoping review (Arksey & O'Malley framework, PRISMA-ScR) to create accurate, plain-language knowledge mobilization materials.</p>
+      <p class="comp-evidence">Evidence → Scoping Review · Toolkit · Literature Synthesis</p>
+    </div>
+    <div class="comp-card">
+      <div class="comp-num">05</div>
+      <h3>Systems Thinking & Applied Expertise</h3>
+      <p>Understanding how gaps in patient awareness shape health system navigation - and proposing communication strategies that support earlier recognition of ovarian cancer symptoms.</p>
+      <p class="comp-evidence">Evidence → Toolkit · Capstone Conference · ePortfolio</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT DESCRIPTION -->
+<section id="project">
+  <p class="section-eyebrow">Project Description</p>
+  <h2 class="section-title">Improving <em>Awareness</em> in the Absence of Ovarian Cancer Screening</h2>
+  <div class="project-grid">
+    <div>
+      <p class="project-body">This capstone project was designed to address a significant and underrecognized public health communication problem: many women and even some providers believe that Pap smears screen for ovarian cancer - they do not. This misconception, and a broader lack of awareness about ovarian cancer symptoms and the absence of a population screening program, contributes to delays in diagnosis and poorer outcomes.</p>
+      <p class="project-body">The project proceeded in two major phases: first, a rigorous scoping review of existing Canadian and international literature and grey literature; and second, the development of a multi-component knowledge mobilization toolkit designed to bridge the identified gaps for both patients and providers.</p>
+      <div class="framework-box">
+        <h4>Methodological Framework</h4>
+        <p>Arksey and O'Malley (2005) scoping review framework with PRISMA-ScR (Preferred Reporting Items for Systematic Reviews and Meta-Analyses - Scoping Reviews extension) reporting guidance. Databases searched: PubMed, CINAHL, Web of Science.</p>
+      </div>
+    </div>
+    <div class="detail-list">
+      <div class="detail-item">
+        <span class="detail-icon">🎓</span>
+        <div>
+          <h5>Student</h5>
+          <p>Dana Haidar · MHSc Advanced Health Care Practice · Western University</p>
+        </div>
+      </div>
+      <div class="detail-item">
+        <span class="detail-icon">👩‍🔬</span>
+        <div>
+          <h5>Field Mentor</h5>
+          <p>Dr. Melanie Barwick · Senior Scientist · SickKids, Toronto</p>
+        </div>
+      </div>
+      <div class="detail-item">
+        <span class="detail-icon">🏛️</span>
+        <div>
+          <h5>Academic Lead</h5>
+          <p>Dr. Marcy Saxe-Braithwaite · Western University</p>
+        </div>
+      </div>
+      <div class="detail-item">
+        <span class="detail-icon">📍</span>
+        <div>
+          <h5>Setting</h5>
+          <p>The Hospital for Sick Children (SickKids) · Toronto, Ontario</p>
+        </div>
+      </div>
+      <div class="detail-item">
+        <span class="detail-icon">📅</span>
+        <div>
+          <h5>Timeline</h5>
+          <p>September 2025 - July 2026 · Capstone Conference: June 17, 2026</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SCOPING REVIEW -->
+<section id="scoping">
+  <p class="section-eyebrow">Learning Outcome 1 - Scoping Review</p>
+  <h2 class="section-title">Knowledge Mobilization Gaps in<br>Ovarian Cancer <em>Detection Communication</em></h2>
+  <div class="scoping-layout">
+    <div>
+      <p class="scoping-body">This scoping review systematically mapped the existing evidence on how ovarian cancer detection information is communicated in the absence of a population screening program. Using the Arksey and O'Malley (2005) framework and PRISMA-ScR guidance, the review searched three major databases - PubMed, CINAHL, and Web of Science - to identify studies addressing awareness, messaging, and knowledge mobilization gaps.</p>
+      <p class="scoping-body">Key findings included widespread inconsistencies in symptom messaging across organizations (e.g., varying thresholds for when to seek care), a common misconception that Pap smears detect ovarian cancer, and structural gaps in how research evidence is translated into accessible patient and provider communication.</p>
+      <p class="scoping-body">The review was reviewed by Dr. Barwick and identified as strong enough for potential publication, with minor final revisions completed in April 2026.</p>
+      <div class="scoping-stats">
+        <div class="stat-cell">
+          <div class="stat-val">3</div>
+          <div class="stat-desc">Databases searched (PubMed, CINAHL, Web of Science)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">A&M</div>
+          <div class="stat-desc">Arksey & O'Malley methodological framework</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">PRISMA</div>
+          <div class="stat-desc">ScR reporting standard applied</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val">KM</div>
+          <div class="stat-desc">Knowledge mobilization focus</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="upload-label">Download Scoping Review</span>
+      <a class="file-link" href="files/Scoping_Review.pdf" target="_blank" rel="noopener">
+        <span class="file-link-icon">PDF</span>
+        <span class="file-link-text"><strong>Scoping Review (full manuscript)</strong>Knowledge Mobilization Gaps in the Communication of Ovarian Cancer Detection Without Population Screening. Includes the PRISMA-ScR flow diagram (Figure 1).</span>
+        <span class="file-link-arrow">&#8595;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLKIT -->
+<section id="toolkit">
+  <p class="section-eyebrow">Learning Outcome 2 - Knowledge Mobilization Toolkit</p>
+  <h2 class="section-title">Translating Evidence into<br><em>Actionable</em> Resources</h2>
+  <p class="section-lead">Built on the scoping review findings, this multi-component knowledge mobilization toolkit was designed to close the gap between research and real-world communication about ovarian cancer detection - for both patients and providers.</p>
+  <div class="toolkit-grid">
+    <div class="toolkit-card">
+      <div class="tk-num">01</div>
+      <span class="tk-icon">📋</span>
+      <h3>Patient Fact Sheet</h3>
+      <p>A plain-language document explaining what the Pap test does and does not detect, why no routine ovarian cancer screening currently exists, and what symptoms warrant medical attention.</p>
+      <p class="tk-competency">Evidence-Based Leadership · Systems Thinking</p>
+      <div class="tk-access">
+        <span class="tk-access-label">Format and Access</span>
+        <p><strong>Format:</strong> One-page fact sheet (PDF, editable PowerPoint source)</p>
+        <p><strong>Delivery:</strong> Digital and print</p>
+        <p><strong>Access channel:</strong> Primary care and community clinic waiting rooms, patient handouts, cancer organization websites</p>
+      </div>
+      <div class="tk-downloads">
+        <a class="tk-dl" href="files/Patient_Fact_Sheet.pdf" target="_blank" rel="noopener">View PDF &#8595;</a>
+        <a class="tk-dl tk-dl-alt" href="files/Patient_Fact_Sheet.pptx">PPTX</a>
+      </div>
+    </div>
+    <div class="toolkit-card">
+      <div class="tk-num">02</div>
+      <span class="tk-icon">💬</span>
+      <h3>Clinician Conversation Guide</h3>
+      <p>A structured resource for primary care providers (GPs, NPs, and residents) with suggested language for explaining screening absence, responding to CA-125 requests, addressing Pap test misconceptions, and the investigation pathway.</p>
+      <p class="tk-competency">Interprofessional Collaboration · Evidence-Based Leadership</p>
+      <div class="tk-access">
+        <span class="tk-access-label">Format and Access</span>
+        <p><strong>Format:</strong> Structured conversation guide (PDF, editable PowerPoint source)</p>
+        <p><strong>Delivery:</strong> Digital and print</p>
+        <p><strong>Access channel:</strong> Primary care providers (GPs, NPs, residents) via continuing professional development, EMR resource links, and clinic onboarding materials</p>
+      </div>
+      <div class="tk-downloads">
+        <a class="tk-dl" href="files/Clinician_Conversation_Guide.pdf" target="_blank" rel="noopener">View PDF &#8595;</a>
+        <a class="tk-dl tk-dl-alt" href="files/Clinician_Conversation_Guide.pptx">PPTX</a>
+      </div>
+    </div>
+    <div class="toolkit-card">
+      <div class="tk-num">03</div>
+      <span class="tk-icon">🌐</span>
+      <h3>Digital Myth-Busting Page</h3>
+      <p>An interactive web page with ten myth-and-fact pairs addressing the most common misconceptions about ovarian cancer detection, grounded in the scoping review evidence base.</p>
+      <p class="tk-competency">Critical Reasoning · Systems Thinking</p>
+      <div class="tk-access">
+        <span class="tk-access-label">Format and Access</span>
+        <p><strong>Format:</strong> Interactive web page (HTML)</p>
+        <p><strong>Delivery:</strong> Digital only</p>
+        <p><strong>Access channel:</strong> Public-facing web, linked from cancer organization and primary care patient resources; open to anyone with the URL</p>
+      </div>
+      <a href="https://ovariancancermythbusting.netlify.app/" target="_blank" rel="noopener" style="display:block; margin-top:16px; background:var(--teal); color:white; text-align:center; padding:12px 16px; font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='#1c2828'" onmouseout="this.style.background='#2a6b6b'">View Live Page &#8594;</a>
+    </div>
+    <div class="toolkit-card">
+      <div class="tk-num">04</div>
+      <span class="tk-icon">📊</span>
+      <h3>Awareness Measurement Tool</h3>
+      <p>A pre/post survey instrument developed for the Canadian context, with selected items informed by the validated Ovarian Cancer Awareness Measure (Simon et al., 2012). The tool includes 12 items across five domains: symptom recognition, screening belief, Pap test knowledge, help-seeking intention, and barriers to help-seeking.</p>
+      <p class="tk-competency">Evidence-Based Leadership · Critical Reasoning</p>
+      <div class="tk-access">
+        <span class="tk-access-label">Format and Access</span>
+        <p><strong>Format:</strong> Pre/post survey instrument (PDF)</p>
+        <p><strong>Delivery:</strong> Digital and print</p>
+        <p><strong>Access channel:</strong> Online via survey platform (e.g. Qualtrics) linked from the toolkit web page, or printed for clinic and community use by clinics, public health units, and cancer organizations</p>
+      </div>
+      <div class="tk-downloads">
+        <a class="tk-dl" href="files/Awareness_Measurement_Tool.pdf" target="_blank" rel="noopener">View PDF &#8595;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFLECTION -->
+<section id="reflection">
+  <p class="section-eyebrow">Reflections - Self-Awareness & Reflexivity</p>
+  <h2 class="section-title">Learning, Growth &<br><em>Self-Leadership</em></h2>
+  <div class="reflection-grid">
+    <div class="reflection-sticky">
+      <p class="reflection-side-body">This section documents my personal and professional reflections throughout the capstone - addressing the Self-Awareness and Reflexivity competency through honest, structured reflection on my growth, challenges, and learning.</p>
+      <div class="deal-box">
+        <h5>D.E.A.L. Reflection Model</h5>
+        <div class="deal-step">
+          <div class="deal-letter">D</div>
+          <p><strong>Describe</strong> - What happened? What was the experience?</p>
+        </div>
+        <div class="deal-step">
+          <div class="deal-letter">E</div>
+          <p><strong>Examine</strong> - What did I notice? What was significant?</p>
+        </div>
+        <div class="deal-step">
+          <div class="deal-letter">A</div>
+          <p><strong>Articulate Learning</strong> - What did I learn? How will I apply it?</p>
+        </div>
+      </div>
+    </div>
+    <div class="reflection-blocks">
+      <div class="ref-block">
+        <h4>Initial Reflection - Entering the Capstone</h4>
+        <p>Beginning this capstone, I carried both motivation and uncertainty. My interest in women's health and ovarian cancer awareness was personal as much as academic - I was aware of how little public knowledge exists about the absence of a screening program. Entering Dr. Barwick's lab introduced me to a rigorous research environment that challenged me to move beyond surface-level understanding and engage with implementation science as a discipline. Early on, I recognized gaps in my own knowledge of KM methodology and committed to developing these skills through the process.</p>
+      </div>
+      <div class="ref-block">
+        <h4>Mid-Point Reflection - Navigating Complexity</h4>
+        <p>The shift from knowledge translation to knowledge mobilization - guided by Dr. Barwick's feedback - was a pivotal moment. It required me to revisit foundational assumptions about the project and rebuild with greater clarity. This experience reinforced my understanding that strong research requires intellectual flexibility and the willingness to reframe. My meeting with Ovarian Cancer Canada program leads was equally formative: it grounded the academic work in real patient experiences, including the challenge of long wait times and inconsistent symptom messaging across providers.</p>
+      </div>
+      <div class="ref-block">
+        <h4>Final Reflection - Critical Self-Reflection</h4>
+        <p>My capstone experience was one of the most meaningful parts of my graduate program because it allowed me to take a topic that was personally and professionally important to me and turn it into an applied knowledge mobilization project. My most significant learning was that knowledge mobilization is not just about sharing information; it is about making information usable, clear, and connected to real decisions. The full reflection traces my growth across all five Applied Health Sciences competencies, the strengths I drew on, the limitations I encountered, and where I want to grow next.</p>
+        <a class="file-link file-link-cream" href="files/Final_Reflection.pdf" target="_blank" rel="noopener">
+          <span class="file-link-icon">PDF</span>
+          <span class="file-link-text"><strong>Read the full Final Reflection</strong>Final Course Critical Self-Reflection, 2025-2026.</span>
+          <span class="file-link-arrow">&#8595;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITY LOG -->
+<section id="log">
+  <p class="section-eyebrow">Activity Log - LEADS Documentation</p>
+  <h2 class="section-title">Capstone <em>Journey</em></h2>
+  <p class="section-lead">A chronological record of capstone milestones, activities, and competency development from September 2025 through July 2026.</p>
+  <div class="log-timeline">
+    <div class="log-entry">
+      <div class="log-month">Sept 2025</div>
+      <div class="log-content">
+        <h4>Project Kickoff - Mentor Secured</h4>
+        <p>Initiated contact with Dr. Barwick; confirmed mentorship and project direction focused on ovarian cancer awareness and Pap smear misconceptions. Completed SickKids HR orientation and mandatory training (3 hrs). Attended first lab meeting.</p>
+        <div class="log-competency-tags">
+          <span class="log-tag">Interprofessional Collaboration</span>
+          <span class="log-tag">Self-Awareness</span>
+        </div>
+      </div>
+    </div>
+    <div class="log-entry">
+      <div class="log-month">Oct 2025</div>
+      <div class="log-content">
+        <h4>Scoping Review Initiated - Literature Search Begins</h4>
+        <p>Began scoping review of Canadian and international ovarian cancer awareness resources. Presented project progress to mentor and academic advisor. Attended Journal Club lab meeting. Identified key themes around screening misconceptions.</p>
+        <div class="log-competency-tags">
+          <span class="log-tag">Evidence-Based Leadership</span>
+          <span class="log-tag">Critical Reasoning</span>
+        </div>
+      </div>
+    </div>
+    <div class="log-entry">
+      <div class="log-month">Nov - Dec 2025</div>
+      <div class="log-content">
+        <h4>Database Searches - PubMed, CINAHL, Web of Science</h4>
+        <p>Conducted systematic searches across three databases. Identified inconsistencies in symptom messaging across organizations. Began Zotero citation management. Reviewed papers on global KM and ovarian cancer misconceptions.</p>
+        <div class="log-competency-tags">
+          <span class="log-tag">Evidence-Based Leadership</span>
+          <span class="log-tag">Systems Thinking</span>
+        </div>
+      </div>
+    </div>
+    <div class="log-entry">
+      <div class="log-month">Jan 2026</div>
+      <div class="log-content">
+        <h4>Stakeholder Meeting - Ovarian Cancer Canada</h4>
+        <p>Met with Program Leads Stephanie Gosselin and Alison Ross at Ovarian Cancer Canada. Presented work, received feedback, and gained insight into real patient challenges including long wait times. Began drafting scoping review and submitted first draft to Dr. Barwick (Feb 6).</p>
+        <div class="log-competency-tags">
+          <span class="log-tag">Interprofessional Collaboration</span>
+          <span class="log-tag">Evidence-Based Leadership</span>
+        </div>
+      </div>
+    </div>
+    <div class="log-entry">
+      <div class="log-month">Feb - Mar 2026</div>
+      <div class="log-content">
+        <h4>Scoping Review Revised - Framework Shift to Knowledge Mobilization</h4>
+        <p>Incorporated Dr. Barwick's feedback; shifted methodological framing to knowledge mobilization. Expanded grey literature search. Re-reviewed literature to align analysis with knowledge mobilization focus. Proficiency self-rating increased to 5.</p>
+        <div class="log-competency-tags">
+          <span class="log-tag">Critical Reasoning</span>
+          <span class="log-tag">Evidence-Based Leadership</span>
+          <span class="log-tag">Systems Thinking</span>
+        </div>
+      </div>
+    </div>
+    <div class="log-entry">
+      <div class="log-month">April 2026</div>
+      <div class="log-content">
+        <h4>Mid-Point Meeting · Toolkit Development Begins · ePortfolio Started</h4>
+        <p>Presented mid-point progress to academic lead and mentor. Received final mentor feedback on scoping review - identified as strong enough for potential publication. Began KM toolkit development and ePortfolio design. Narrowed toolkit components to highest-impact formats.</p>
+        <div class="log-competency-tags">
+          <span class="log-tag">All Five Competencies</span>
+          <span class="log-tag">Evidence-Based Leadership</span>
+          <span class="log-tag">Interprofessional Collaboration</span>
+        </div>
+      </div>
+    </div>
+    <div class="log-entry">
+      <div class="log-month">May - June 2026</div>
+      <div class="log-content">
+        <h4>ePortfolio Completed · Capstone Conference Presentation</h4>
+        <p>Finalized all four toolkit components and ePortfolio. Presented capstone project at the APPLHSCI 9099 Capstone Conference on June 17, 2026, sharing findings on knowledge mobilization gaps in ovarian cancer detection communication and demonstrating the toolkit to peers and evaluators.</p>
+        <div class="log-competency-tags">
+          <span class="log-tag">All Five Competencies</span>
+          <span class="log-tag">Interprofessional Collaboration</span>
+          <span class="log-tag">Evidence-Based Leadership</span>
+        </div>
+      </div>
+    </div>
+    <div class="log-entry">
+      <div class="log-month">July 2026</div>
+      <div class="log-content">
+        <h4>Final Mentor and Academic Lead Meeting · ePortfolio Submission</h4>
+        <p>Held final meeting with Dr. Melanie Barwick (field mentor) and Dr. Marcy Saxe-Braithwaite (academic lead) to review capstone outcomes and confirm completion. Submitted final ePortfolio and reflection as the concluding deliverable of APPLHSCI 9099.</p>
+        <div class="log-competency-tags">
+          <span class="log-tag">Self-Awareness and Reflexivity</span>
+          <span class="log-tag">Interprofessional Collaboration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="log-downloads">
+    <span class="log-dl-label">Capstone Documents</span>
+    <div class="log-dl-grid">
+      <a class="log-dl-card" href="files/Activity_Log.docx">
+        <span class="log-dl-type">DOCX</span>
+        <span class="log-dl-name">Complete Activity Log</span>
+        <span class="log-dl-sub">Full chronological capstone log</span>
+      </a>
+      <a class="log-dl-card" href="files/Capstone_Presentation.pdf" target="_blank" rel="noopener">
+        <span class="log-dl-type">PDF</span>
+        <span class="log-dl-name">Conference Presentation</span>
+        <span class="log-dl-sub">June 17, 2026 (PPTX also available)</span>
+      </a>
+      <a class="log-dl-card" href="files/Capstone_Learning_Plan.docx">
+        <span class="log-dl-type">DOCX</span>
+        <span class="log-dl-name">Capstone Learning Plan</span>
+        <span class="log-dl-sub">Updated 2025-26 learning plan</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-col">
+    <h4>Dana Haidar</h4>
+    <p>MHSc Advanced Health Care Practice</p>
+    <p>Western University · 2025-2026</p>
+    <p style="margin-top:10px;">APPLHSCI 9099 - Capstone Experience</p>
+  </div>
+  <div class="footer-col">
+    <h4>Supervision</h4>
+    <p>Dr. Melanie Barwick</p>
+    <p>Senior Scientist, SickKids</p>
+    <p style="margin-top:8px;">Dr. Marcy Saxe-Braithwaite</p>
+    <p>Academic Lead, Western University</p>
+  </div>
+  <div class="footer-col">
+    <h4>Capstone Conference</h4>
+    <p>June 17, 2026</p>
+    <p>Final Presentation & Submission</p>
+    <p style="margin-top:8px;">Hospital for Sick Children</p>
+    <p>Toronto, Ontario</p>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>APPLHSCI 9099 Capstone ePortfolio · Dana Haidar · Western University 2025-2026</p>
+  <p>Knowledge Mobilization Gaps in Ovarian Cancer Detection Communication</p>
+</div>
+
+</body>
+</html>
